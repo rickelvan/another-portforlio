@@ -6,6 +6,25 @@
     <title>Derrick Elvan Katende Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        #back-to-top:hover {
+            background-color: #c5303e;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -81,6 +100,8 @@
         <p>More about my department: <a href="https://cse.ucu.ac.ug/" target="_blank">UCU Computer Science Department</a></p>
     </div>
 
+    <button id="back-to-top">Back to Top</button>
+
     <script>
         const dynamicText = document.querySelector('.dynamic-text');
         const words = ['Support Specialist in IT', 'web designer', 'Machine Learning Beginner','Cybersecurity Enthusiast','Frontend Developer'];
@@ -112,6 +133,21 @@
         }
 
         document.addEventListener('DOMContentLoaded', typeEffect);
+
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
+
