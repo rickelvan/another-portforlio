@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .profile-container::before { display: none; } /* Ensure red circle is removed */
-        video { width: 80%; height: 400px; object-fit: cover; display: block; margin: 0 auto; border-radius: 10px; }
+        .profile-container::before { display: none; }
+        video { width: 90%; height: auto; max-height: 500px; display: block; margin: 0 auto; border-radius: 10px; }
     </style>
 </head>
 <body>
@@ -18,12 +18,14 @@
             <a href="#home" class="active">Home</a>
             <a href="#education">Education</a>
             <a href="#hobby-video">Hobby Video</a>
+            <a href="#personal-details">Personal Details</a>
+            <a href="#useful-links">Useful Links</a>
         </nav>
     </header>
 
     <div id="home" class="home">
         <div class="profile-container">
-            <h2>Derrick Katende</h2>
+            <h2>Derrick</h2>
             <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
         </div>
         <div class="content">
@@ -67,9 +69,25 @@
         </video>
     </div>
 
+    <div id="personal-details" class="section">
+        <h2>Personal Details</h2>
+        <ul>
+            <li><strong>Full Name:</strong> Katende Derrick Elvan</li>
+            <li><strong>Student ID:</strong> B22771</li>
+            <li><strong>Course and Year:</strong> B.Sc. in Computer Science, Year 2</li>
+            <li><strong>Hobbies and Interests:</strong> Hanging out with the boys, photography, gaming</li>
+        </ul>
+    </div>
+
+    <div id="useful-links" class="section">
+        <h2>Useful Links</h2>
+        <p>Visit my favorite website: <a href="https://www.bmw.com/en/index.html" target="_blank">BMW Official Website</a></p>
+        <p>More about my department: <a href="https://cse.ucu.ac.ug/" target="_blank">UCU Computer Science Department</a></p>
+    </div>
+
     <script>
         const dynamicText = document.querySelector('.dynamic-text');
-        const words = ['cyber security specialist', 'web designer', 'financial manager'];
+        const words = ['IT Support Specialist', 'web designer', 'Machine Learning Beginner','Cybersecurity Enthusiast','Frontend Developer'];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -87,7 +105,7 @@
 
             if (!isDeleting && charIndex === currentWord.length) {
                 isDeleting = true;
-                setTimeout(typeEffect, 2000); // Hold full text for 2 seconds
+                setTimeout(typeEffect, 2000);
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 wordIndex = (wordIndex + 1) % words.length;
